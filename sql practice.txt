@@ -1,0 +1,17 @@
+Learning PRIMARY KEY And FORIEGN KEY!!!
+Master table Emp221
+Child Table Designation
+
+create table emp221(empno number primary key,name varchar2(30) not null,dept varchar2(30), salary float ,email varchar2(100) );
+insert into emp221 values(111,'Deepak','IT',50000.75,'d10101@gmail.com');
+insert into emp221 values(115,'Vipin','HR',35000.75,'v10101@gmail.com');
+insert into emp221 values(117,'Sam','Manager',27000.75,'s10101@gmail.com');
+insert into emp221 values(119,'Mike','Helper',515000.75,'m10101@gmail.com');
+select * from emp221;
+
+create table designation(empno number references emp221(empno) ,design varchar2(30), location varchar2(30));
+insert into designation values(111,'Developer','Chandigarh');
+insert into designation values(115,'Group Management','Goa');
+insert into designation values(117,'Project Manager','Pune');
+insert into designation values(119,'Guard','Ayodhya');
+select * from designation;
